@@ -1,0 +1,239 @@
+{
+  "seleniumLog": [
+    {
+      "commandName": "navigateToDeltaBookingPage",
+      "args": [
+        "[]"
+      ],
+      "result": "success",
+      "subLogs": [
+        {
+          "commandName": "get",
+          "args": [
+            "{url=https://www.delta.com}"
+          ],
+          "result": "null",
+          "subLogs": [],
+          "duration": 7510
+        },
+        {
+          "commandName": "maximizeCurrentWindow",
+          "args": [
+            "{}"
+          ],
+          "result": "{width=1382, x=-7, y=-7, height=886}",
+          "subLogs": [],
+          "duration": 458
+        }
+      ],
+      "duration": -1
+    },
+    {
+      "commandName": "clickOnFromLink",
+      "args": [
+        "[]"
+      ],
+      "result": "fail",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User enters departure airport 'LAX'",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User selects departure airport from search results",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User clicks on To link",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User enters destination airport 'DCA'",
+      "args": [
+        "[DCA]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User selects destination airport from search results",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User selects trip type 'oneway'",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User selects departure date '02/05/2022'",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User selects number of passenger '2'",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "And User clicks on search button",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    },
+    {
+      "commandName": "Then list of flights should generate",
+      "args": [
+        "[]"
+      ],
+      "result": "Not Run",
+      "subLogs": [],
+      "duration": -1
+    }
+  ],
+  "checkPoints": [
+    {
+      "message": "Given User is on Delta Booking Page",
+      "type": "TestStepPass",
+      "screenshot": null,
+      "duration": 16597,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "When User clicks on From Link",
+      "type": "TestStepFail",
+      "screenshot": "img/ValidateOneWayBooking_1dvo45ypgt50q19475.png",
+      "duration": 16,
+      "threshold": 0,
+      "subCheckPoints": [
+        {
+          "message": "current thread is not owner",
+          "type": "Fail",
+          "screenshot": null,
+          "duration": 0,
+          "threshold": 0,
+          "subCheckPoints": []
+        }
+      ]
+    },
+    {
+      "message": "And User enters departure airport 'LAX'",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "And User selects departure airport from search results",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "And User clicks on To link",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "And User enters destination airport 'DCA'",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "And User selects destination airport from search results",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "And User selects trip type 'oneway'",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "And User selects departure date '02/05/2022'",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "And User selects number of passenger '2'",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "And User clicks on search button",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    },
+    {
+      "message": "Then list of flights should generate",
+      "type": "TestStep",
+      "screenshot": null,
+      "duration": 0,
+      "threshold": 0,
+      "subCheckPoints": []
+    }
+  ],
+  "errorTrace": "java.lang.IllegalMonitorStateException: current thread is not owner\r\n\tat .When User clicks on From Link(scenarios/onewaybooking.feature:6)\r\n\tat java.base/java.lang.Object.wait(Native Method)\r\n\tat com.qmetry.automation.delta.booking.steps.OneWayBookingSteps.clickOnFromLink(OneWayBookingSteps.java:21)\r\n\tat com.qmetry.qaf.automation.step.JavaStep.doExecute(JavaStep.java:150)\r\n\tat com.qmetry.qaf.automation.step.BaseTestStep.execute(BaseTestStep.java:149)\r\n\tat com.qmetry.qaf.automation.step.StringTestStep.execute(StringTestStep.java:128)\r\n\tat com.qmetry.qaf.automation.step.client.Scenario.execute(Scenario.java:174)\r\n\tat com.qmetry.qaf.automation.step.client.Scenario.scenario(Scenario.java:237)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)\r\n\tat java.base/java.lang.Thread.run(Thread.java:831)\r\n"
+}

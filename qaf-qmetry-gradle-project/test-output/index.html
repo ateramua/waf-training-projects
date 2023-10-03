@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-QAF_Demo" class="navigator-link">
+              <span class="suite-name border-passed">QAF Demo</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-QAF_Demo" class="navigator-link ">
+                    <span>C:\Users\abdit\git\DeltaCucumberGradleProject\Config\onewaybooking.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-QAF_Demo" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-QAF_Demo" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-QAF_Demo" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-QAF_Demo" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-QAF_Demo" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-QAF_Demo" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-QAF_Demo" class="hide-methods passed suite-QAF_Demo"> (hide)</a> <!-- hide-methods passed suite-QAF_Demo -->
+                      <a href="#" panel-name="suite-QAF_Demo" class="show-methods passed suite-QAF_Demo"> (show)</a> <!-- show-methods passed suite-QAF_Demo -->
+                    </span>
+                    <div class="method-list-content passed suite-QAF_Demo">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-QAF_Demo" title="com.qmetry.qaf.automation.step.client.Scenario" class="method navigator-link" hash-for-method="Validate One Way Booking">Validate One Way Booking</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-QAF_Demo -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-QAF_Demo" class="panel QAF_Demo">
+          <div class="suite-QAF_Demo-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qmetry.qaf.automation.step.client.Scenario</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Validate One Way Booking">
+                  </a> <!-- Validate One Way Booking -->
+                  <span class="method-name">Validate One Way Booking</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-QAF_Demo-class-passed -->
+        </div> <!-- panel QAF_Demo -->
+        <div panel-name="test-xml-QAF_Demo" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\abdit\git\DeltaCucumberGradleProject\Config\onewaybooking.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite parallel=&quot;methods&quot; name=&quot;QAF Demo&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test name=&quot;QAF-BDD-Test-Mobile&quot;&gt;
+    &lt;method-selectors&gt;
+      &lt;method-selector&gt;
+        &lt;selector-class name=&quot;com.qmetry.qaf.automation.testng.pro.QAFMethodSelector&quot; priority=&quot;0&quot;/&gt;
+      &lt;/method-selector&gt;
+    &lt;/method-selectors&gt;
+    &lt;parameter name=&quot;scenario.file.loc&quot; value=&quot;scenarios/onewaybooking.feature&quot;/&gt;
+    &lt;parameter name=&quot;env.resources&quot; value=&quot;resources/application.properties;resources/uat&quot;/&gt;
+    &lt;parameter name=&quot;step.provider.pkg&quot; value=&quot;com.qmetry.automation.delta.booking.steps&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.qmetry.qaf.automation.step.client.text.BDDTestFactory2&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- QAF-BDD-Test-Mobile --&gt;
+&lt;/suite&gt; &lt;!-- QAF Demo --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-QAF_Demo" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for QAF Demo</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">QAF-BDD-Test-Mobile (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-QAF_Demo" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for QAF Demo</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-QAF_Demo" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for QAF Demo</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_QAF_Demo');
+function tableData_QAF_Demo() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'Validate One Way Booking')
+data.setCell(0, 2, 'com.qmetry.qaf.automation.step.client.Scenario')
+data.setCell(0, 3, 14421);
+window.suiteTableData['QAF_Demo']= { tableData: data, tableDiv: 'times-div-QAF_Demo'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <div id="times-div-QAF_Demo">
+              </div> <!-- times-div-QAF_Demo -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-QAF_Demo" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for QAF Demo</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-QAF_Demo" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-QAF_Demo" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qmetry.qaf.automation.step.client.Scenario</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">setupSuit(org.testng.TestRunner@dbd8e44)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">setupTest(org.testng.TestRunner@dbd8e44)</span>
+                <span class="method-start">23 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">setup(org.testng.TestRunner@dbd8e44)</span>
+                <span class="method-start">86 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">setupMethod(public void com.qmetry.qaf.automation.step.client.Scenario.scenario(), org.testng.TestRunner@dbd8e44)</span>
+                <span class="method-start">97 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Validate One Way Booking</span>
+                <span class="method-start">98 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod(org.testng.TestRunner@dbd8e44, [TestResult name=Validate One Way Booking status=SUCCESS method=scena...)</span>
+                <span class="method-start">14536 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass(org.testng.TestRunner@dbd8e44)</span>
+                <span class="method-start">14537 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest(org.testng.TestRunner@dbd8e44)</span>
+                <span class="method-start">14538 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

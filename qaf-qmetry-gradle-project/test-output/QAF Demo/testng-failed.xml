@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [QAF Demo]" guice-stage="DEVELOPMENT" verbose="0">
+  <test parallel="methods" name="QAF-BDD-Test-Mobile(failed)">
+    <parameter name="scenario.file.loc" value="scenarios/onewaybooking.feature"/>
+    <parameter name="env.resources" value="resources/application.properties;resources/uat"/>
+    <parameter name="step.provider.pkg" value="com.qmetry.automation.delta.booking.steps"/>
+    <classes>
+      <class name="com.qmetry.qaf.automation.step.client.Scenario">
+        <methods>
+          <include name="scenario"/>
+          <include name="setupTest"/>
+          <include name="setupSuit"/>
+          <include name="setup"/>
+          <include name="afterClass"/>
+          <include name="setupMethod"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.qmetry.qaf.automation.step.client.Scenario -->
+    </classes>
+  </test> <!-- QAF-BDD-Test-Mobile(failed) -->
+</suite> <!-- Failed suite [QAF Demo] -->

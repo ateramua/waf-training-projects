@@ -1,0 +1,26 @@
+{
+  "methods": [
+    {
+      "index": 1,
+      "retryCount": null,
+      "type": "test",
+      "args": [],
+      "metaData": {
+        "description": "",
+        "Feature": " Booking Page Validation",
+        "groups": [],
+        "lineNo": 3,
+        "name": "Validate One Way Booking",
+        "reference": "scenarios/onewaybooking.feature",
+        "resultFileName": "ValidateOneWayBooking",
+        "sign": "scenarios.onewaybooking.feature.Validate One Way Booking()[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]"
+      },
+      "dependsOn": [],
+      "doc": null,
+      "startTime": 1644097771648,
+      "duration": 6460,
+      "result": "pass",
+      "passPer": 0.0
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-02-06T02:37:10Z" name="QAF Demo" finished-at="2022-02-06T02:37:25Z" duration-ms="14518">
+    <groups>
+    </groups>
+    <test started-at="2022-02-06T02:37:10Z" name="QAF-BDD-Test-Mobile" finished-at="2022-02-06T02:37:25Z" duration-ms="14518">
+      <class name="com.qmetry.qaf.automation.step.client.Scenario">
+        <test-method is-config="true" signature="setupSuit(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="setupSuit" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:10Z" duration-ms="21" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSuit -->
+        <test-method is-config="true" signature="setupTest(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="setupTest" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:10Z" duration-ms="51" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="setup" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:10Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setupMethod(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="setupMethod" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:10Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qmetry.qaf.automation.step.client.Scenario.scenario()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMethod -->
+        <test-method signature="Validate One Way Booking()[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="Validate One Way Booking" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:25Z" duration-ms="14421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Validate One Way Booking -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext, org.testng.ITestResult)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:25Z" name="afterMethod" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:25Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=Validate One Way Booking status=SUCCESS method=scenarios.onewaybooking.feature.Validate One Way Booking()[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:25Z" name="afterClass" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:25Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="afterTest(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:25Z" name="afterTest" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:25Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.qmetry.qaf.automation.step.client.Scenario -->
+    </test> <!-- QAF-BDD-Test-Mobile -->
+  </suite> <!-- QAF Demo -->
+</testng-results>

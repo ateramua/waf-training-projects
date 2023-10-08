@@ -1,104 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-06T02:37:10Z" name="QAF Demo" finished-at="2022-02-06T02:37:25Z" duration-ms="14518">
+  <suite started-at="2023-10-08T22:04:12Z" name="QAF Demo" finished-at="2023-10-08T22:04:56Z" duration-ms="44437">
     <groups>
     </groups>
-    <test started-at="2022-02-06T02:37:10Z" name="QAF-BDD-Test-Mobile" finished-at="2022-02-06T02:37:25Z" duration-ms="14518">
-      <class name="com.qmetry.qaf.automation.step.client.Scenario">
-        <test-method is-config="true" signature="setupSuit(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="setupSuit" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:10Z" duration-ms="21" status="PASS">
+    <test started-at="2023-10-08T22:04:12Z" name="QAF-BDD-Test-Mobile" finished-at="2023-10-08T22:04:56Z" duration-ms="44437">
+      <class name="com.qmetry.qaf.automation.step.client.DataDrivenScenario">
+        <test-method is-config="true" signature="setupSuit(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8]" started-at="2023-10-08T18:04:12Z" name="setupSuit" test-instance-name="Validate One Way Booking" finished-at="2023-10-08T18:04:12Z" duration-ms="27" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+                <![CDATA[org.testng.TestRunner@6127a7e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupSuit -->
-        <test-method is-config="true" signature="setupTest(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="setupTest" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:10Z" duration-ms="51" status="PASS">
+        <test-method is-config="true" signature="setupTest(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8]" started-at="2023-10-08T18:04:12Z" name="setupTest" test-instance-name="Validate One Way Booking" finished-at="2023-10-08T18:04:12Z" duration-ms="87" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+                <![CDATA[org.testng.TestRunner@6127a7e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="setup" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:10Z" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8]" started-at="2023-10-08T18:04:12Z" name="setup" test-instance-name="Validate One Way Booking" finished-at="2023-10-08T18:04:12Z" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+                <![CDATA[org.testng.TestRunner@6127a7e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupMethod(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="setupMethod" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:10Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setupMethod(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8]" started-at="2023-10-08T18:04:12Z" name="setupMethod" test-instance-name="Validate One Way Booking" finished-at="2023-10-08T18:04:12Z" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.qmetry.qaf.automation.step.client.Scenario.scenario()]]>
+                <![CDATA[public void com.qmetry.qaf.automation.step.client.DataDrivenScenario.scenario(java.util.Map)]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+                <![CDATA[org.testng.TestRunner@6127a7e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupMethod -->
-        <test-method signature="Validate One Way Booking()[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:10Z" name="Validate One Way Booking" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:25Z" duration-ms="14421" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Validate One Way Booking -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext, org.testng.ITestResult)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:25Z" name="afterMethod" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:25Z" duration-ms="1" status="PASS">
+        <test-method signature="Validate One Way Booking( java.util.Map)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8]" started-at="2023-10-08T18:04:12Z" name="Validate One Way Booking" test-instance-name="Validate One Way Booking" finished-at="2023-10-08T18:04:56Z" duration-ms="43647" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+                <![CDATA[{trip=One Way, __index=1}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Timed out after 30 seconds waiting for presence of element located by: Using {'locator':'xpath: //*[@aria-describedby='selectTripType-val']';'desc':'trip button'}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for presence of element located by: Using {'locator':'xpath: //*[@aria-describedby='selectTripType-val']';'desc':'trip button'}
+	at .When User clicks on Trip type dropdown(scenarios/delta/onewaybooking.feature:6)
+	at com.qmetry.qaf.automation.ui.util.DynamicWait.until(DynamicWait.java:168)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.load(QAFExtendedWebDriver.java:225)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement.load(QAFExtendedWebElement.java:307)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement.execute(QAFExtendedWebElement.java:254)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at com.qmetry.qaf.delta.steps.OneWayBookingSteps.selectTripTypee(OneWayBookingSteps.java:170)
+	at com.qmetry.qaf.automation.step.JavaStep.doExecute(JavaStep.java:150)
+	at com.qmetry.qaf.automation.step.BaseTestStep.execute(BaseTestStep.java:149)
+	at com.qmetry.qaf.automation.step.StringTestStep.execute(StringTestStep.java:128)
+	at com.qmetry.qaf.automation.step.client.Scenario.execute(Scenario.java:174)
+	at com.qmetry.qaf.automation.step.client.DataDrivenScenario.scenario(DataDrivenScenario.java:66)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.InvalidArgumentException: invalid argument: invalid locator
+  (Session info: chrome=117.0.5938.149)
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'macs-Air.lan', ip: '2603:6080:2d40:effb:0:0:0:1f62%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.6.8', java.version: '11.0.20'
+Driver info: com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=117.0.5938.149 (e3344ddefa12e60436fa28c81cf207c1afb4d0a9-refs/branch-heads/5938@{#1539}), userDataDir=/var/folders/81/l4882pwj04gcjw918lsf69j80000gn/T/.org.chromium.Chromium.EERbdB}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=MAC, proxy=Proxy(), webauthn:extension:minPinLength=true, goog:chromeOptions={debuggerAddress=localhost:65377}, webauthn:extension:credBlob=true, webauthn:extension:prf=true, acceptInsecureCerts=false, browserVersion=117.0.5938.149, fedcm:accounts=true, browserName=chrome, javascriptEnabled=true, platformName=MAC, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 0f6a1be281aa29a743ea14444182ada4
+*** Element info: {Using={'locator':'xpath, value=//*[@aria-describedby='selectTripType-val']';'desc':'trip button'}}
+	at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.executeSuper(QAFExtendedWebDriver.java:241)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.executeWithoutLog(QAFExtendedWebDriver.java:255)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.executeWitoutLog(QAFExtendedWebDriver.java:300)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.execute(QAFExtendedWebDriver.java:278)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.findElementsByCustomStretegy(QAFExtendedWebDriver.java:635)
+	at com.qmetry.qaf.automation.ui.webdriver.ByCustom$1.findElements(ByCustom.java:81)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at com.qmetry.qaf.automation.ui.util.DynamicWait.until(DynamicWait.java:147)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.load(QAFExtendedWebDriver.java:225)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement.load(QAFExtendedWebElement.java:307)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement.execute(QAFExtendedWebElement.java:254)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at com.qmetry.qaf.delta.steps.OneWayBookingSteps.selectTripTypee(OneWayBookingSteps.java:170)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.qmetry.qaf.automation.step.JavaStep.doExecute(JavaStep.java:150)
+	at com.qmetry.qaf.automation.step.BaseTestStep.execute(BaseTestStep.java:149)
+	at com.qmetry.qaf.automation.step.StringTestStep.execute(StringTestStep.java:128)
+	at com.qmetry.qaf.automation.step.client.Scenario.execute(Scenario.java:174)
+	at com.qmetry.qaf.automation.step.client.DataDrivenScenario.scenario(DataDrivenScenario.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	... 3 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Validate One Way Booking -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext, org.testng.ITestResult)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8]" started-at="2023-10-08T18:04:56Z" name="afterMethod" test-instance-name="Validate One Way Booking" finished-at="2023-10-08T18:04:56Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6127a7e]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=Validate One Way Booking status=SUCCESS method=scenarios.onewaybooking.feature.Validate One Way Booking()[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8] output={null}]]]>
+                <![CDATA[[TestResult name=Validate One Way Booking status=FAILURE method=scenarios.delta.onewaybooking.feature.Validate One Way Booking( java.util.Map)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:25Z" name="afterClass" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:25Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8]" started-at="2023-10-08T18:04:56Z" name="afterClass" test-instance-name="Validate One Way Booking" finished-at="2023-10-08T18:04:56Z" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+                <![CDATA[org.testng.TestRunner@6127a7e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.Scenario@3e8]" started-at="2022-02-05T21:37:25Z" name="afterTest" test-instance-name="Validate One Way Booking" finished-at="2022-02-05T21:37:25Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTest(org.testng.ITestContext)[pri:0, instance:com.qmetry.qaf.automation.step.client.DataDrivenScenario@3e8]" started-at="2023-10-08T18:04:56Z" name="afterTest" test-instance-name="Validate One Way Booking" finished-at="2023-10-08T18:04:56Z" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@dbd8e44]]>
+                <![CDATA[org.testng.TestRunner@6127a7e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.qmetry.qaf.automation.step.client.Scenario -->
+      </class> <!-- com.qmetry.qaf.automation.step.client.DataDrivenScenario -->
     </test> <!-- QAF-BDD-Test-Mobile -->
   </suite> <!-- QAF Demo -->
 </testng-results>

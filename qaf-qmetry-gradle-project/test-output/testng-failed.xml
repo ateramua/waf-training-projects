@@ -2,13 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="methods" name="Failed suite [QAF Demo]" guice-stage="DEVELOPMENT" verbose="0">
   <test parallel="methods" name="QAF-BDD-Test-Mobile(failed)">
-    <parameter name="scenario.file.loc" value="scenarios/onewaybooking.feature"/>
-    <parameter name="env.resources" value="resources/application.properties;resources/uat"/>
-    <parameter name="step.provider.pkg" value="com.qmetry.automation.delta.booking.steps"/>
+    <parameter name="scenario.file.loc" value="scenarios/delta"/>
+    <parameter name="env.resources" value="resources/application.properties;resources/uat/delta"/>
+    <parameter name="step.provider.pkg" value="com.qmetry.qaf.delta.steps"/>
     <classes>
-      <class name="com.qmetry.qaf.automation.step.client.Scenario">
+      <class name="com.qmetry.qaf.automation.step.client.DataDrivenScenario">
         <methods>
-          <include name="scenario"/>
+          <include name="scenario" invocation-numbers="0"/>
           <include name="setupTest"/>
           <include name="setupSuit"/>
           <include name="setup"/>
@@ -17,7 +17,7 @@
           <include name="afterMethod"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- com.qmetry.qaf.automation.step.client.Scenario -->
+      </class> <!-- com.qmetry.qaf.automation.step.client.DataDrivenScenario -->
     </classes>
   </test> <!-- QAF-BDD-Test-Mobile(failed) -->
 </suite> <!-- Failed suite [QAF Demo] -->

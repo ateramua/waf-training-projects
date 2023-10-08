@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-QAF_Demo" class="navigator-link">
-              <span class="suite-name border-passed">QAF Demo</span>
+              <span class="suite-name border-failed">QAF Demo</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-QAF_Demo" class="navigator-link ">
-                    <span>C:\Users\abdit\git\DeltaCucumberGradleProject\Config\onewaybooking.xml</span>
+                    <span>onewaybooking.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-QAF_Demo" class="hide-methods passed suite-QAF_Demo"> (hide)</a> <!-- hide-methods passed suite-QAF_Demo -->
-                      <a href="#" panel-name="suite-QAF_Demo" class="show-methods passed suite-QAF_Demo"> (show)</a> <!-- show-methods passed suite-QAF_Demo -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-QAF_Demo" class="hide-methods failed suite-QAF_Demo"> (hide)</a> <!-- hide-methods failed suite-QAF_Demo -->
+                      <a href="#" panel-name="suite-QAF_Demo" class="show-methods failed suite-QAF_Demo"> (show)</a> <!-- show-methods failed suite-QAF_Demo -->
                     </span>
-                    <div class="method-list-content passed suite-QAF_Demo">
+                    <div class="method-list-content failed suite-QAF_Demo">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-QAF_Demo" title="com.qmetry.qaf.automation.step.client.Scenario" class="method navigator-link" hash-for-method="Validate One Way Booking">Validate One Way Booking</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-QAF_Demo" title="com.qmetry.qaf.automation.step.client.DataDrivenScenario" class="method navigator-link" hash-for-method="Validate One Way Booking({trip=One Way, __index=1})">Validate One Way Booking({trip=One Way, __index=1})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-QAF_Demo -->
+                    </div> <!-- method-list-content failed suite-QAF_Demo -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,25 +117,81 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-QAF_Demo" class="panel QAF_Demo">
-          <div class="suite-QAF_Demo-class-passed">
+          <div class="suite-QAF_Demo-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.qmetry.qaf.automation.step.client.Scenario</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.qmetry.qaf.automation.step.client.DataDrivenScenario</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Validate One Way Booking">
-                  </a> <!-- Validate One Way Booking -->
+                  <a name="Validate One Way Booking({trip=One Way, __index=1})">
+                  </a> <!-- Validate One Way Booking({trip=One Way, __index=1}) -->
                   <span class="method-name">Validate One Way Booking</span>
+                  <span class="parameters">({trip=One Way, __index=1})</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for presence of element located by: Using {&apos;locator&apos;:&apos;xpath: //*[@aria-describedby=&apos;selectTripType-val&apos;]&apos;;&apos;desc&apos;:&apos;trip button&apos;}
+	at .When User clicks on Trip type dropdown(scenarios/delta/onewaybooking.feature:6)
+	at com.qmetry.qaf.automation.ui.util.DynamicWait.until(DynamicWait.java:168)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.load(QAFExtendedWebDriver.java:225)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement.load(QAFExtendedWebElement.java:307)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement.execute(QAFExtendedWebElement.java:254)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at com.qmetry.qaf.delta.steps.OneWayBookingSteps.selectTripTypee(OneWayBookingSteps.java:170)
+	at com.qmetry.qaf.automation.step.JavaStep.doExecute(JavaStep.java:150)
+	at com.qmetry.qaf.automation.step.BaseTestStep.execute(BaseTestStep.java:149)
+	at com.qmetry.qaf.automation.step.StringTestStep.execute(StringTestStep.java:128)
+	at com.qmetry.qaf.automation.step.client.Scenario.execute(Scenario.java:174)
+	at com.qmetry.qaf.automation.step.client.DataDrivenScenario.scenario(DataDrivenScenario.java:66)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.InvalidArgumentException: invalid argument: invalid locator
+  (Session info: chrome=117.0.5938.149)
+Build info: version: &apos;3.6.0&apos;, revision: &apos;6fbf3ec767&apos;, time: &apos;2017-09-27T15:28:36.4Z&apos;
+System info: host: &apos;macs-Air.lan&apos;, ip: &apos;2603:6080:2d40:effb:0:0:0:1f62%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6.8&apos;, java.version: &apos;11.0.20&apos;
+Driver info: com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=117.0.5938.149 (e3344ddefa12e60436fa28c81cf207c1afb4d0a9-refs/branch-heads/5938@{#1539}), userDataDir=/var/folders/81/l4882pwj04gcjw918lsf69j80000gn/T/.org.chromium.Chromium.EERbdB}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=MAC, proxy=Proxy(), webauthn:extension:minPinLength=true, goog:chromeOptions={debuggerAddress=localhost:65377}, webauthn:extension:credBlob=true, webauthn:extension:prf=true, acceptInsecureCerts=false, browserVersion=117.0.5938.149, fedcm:accounts=true, browserName=chrome, javascriptEnabled=true, platformName=MAC, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 0f6a1be281aa29a743ea14444182ada4
+*** Element info: {Using={&apos;locator&apos;:&apos;xpath, value=//*[@aria-describedby=&apos;selectTripType-val&apos;]&apos;;&apos;desc&apos;:&apos;trip button&apos;}}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.executeSuper(QAFExtendedWebDriver.java:241)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.executeWithoutLog(QAFExtendedWebDriver.java:255)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.executeWitoutLog(QAFExtendedWebDriver.java:300)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.execute(QAFExtendedWebDriver.java:278)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.findElementsByCustomStretegy(QAFExtendedWebDriver.java:635)
+	at com.qmetry.qaf.automation.ui.webdriver.ByCustom$1.findElements(ByCustom.java:81)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at com.qmetry.qaf.automation.ui.util.DynamicWait.until(DynamicWait.java:147)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver.load(QAFExtendedWebDriver.java:225)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement.load(QAFExtendedWebElement.java:307)
+	at com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement.execute(QAFExtendedWebElement.java:254)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at com.qmetry.qaf.delta.steps.OneWayBookingSteps.selectTripTypee(OneWayBookingSteps.java:170)
+	at com.qmetry.qaf.automation.step.JavaStep.doExecute(JavaStep.java:150)
+	at com.qmetry.qaf.automation.step.BaseTestStep.execute(BaseTestStep.java:149)
+	at com.qmetry.qaf.automation.step.StringTestStep.execute(StringTestStep.java:128)
+	at com.qmetry.qaf.automation.step.client.Scenario.execute(Scenario.java:174)
+	at com.qmetry.qaf.automation.step.client.DataDrivenScenario.scenario(DataDrivenScenario.java:66)
+	... 3 more
+... Removed 17 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-QAF_Demo-class-passed -->
+          </div> <!-- suite-QAF_Demo-class-failed -->
         </div> <!-- panel QAF_Demo -->
         <div panel-name="test-xml-QAF_Demo" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\abdit\git\DeltaCucumberGradleProject\Config\onewaybooking.xml</span>
+            <span class="header-content">/Applications/developer/automation/Eclipse-Workspace/qaf-qmetry-WS/qaf-qmetry-gradle-project/config/delta/onewaybooking.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -148,9 +204,9 @@
         &lt;selector-class name=&quot;com.qmetry.qaf.automation.testng.pro.QAFMethodSelector&quot; priority=&quot;0&quot;/&gt;
       &lt;/method-selector&gt;
     &lt;/method-selectors&gt;
-    &lt;parameter name=&quot;scenario.file.loc&quot; value=&quot;scenarios/onewaybooking.feature&quot;/&gt;
-    &lt;parameter name=&quot;env.resources&quot; value=&quot;resources/application.properties;resources/uat&quot;/&gt;
-    &lt;parameter name=&quot;step.provider.pkg&quot; value=&quot;com.qmetry.automation.delta.booking.steps&quot;/&gt;
+    &lt;parameter name=&quot;scenario.file.loc&quot; value=&quot;scenarios/delta&quot;/&gt;
+    &lt;parameter name=&quot;env.resources&quot; value=&quot;resources/application.properties;resources/uat/delta&quot;/&gt;
+    &lt;parameter name=&quot;step.provider.pkg&quot; value=&quot;com.qmetry.qaf.delta.steps&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.qmetry.qaf.automation.step.client.text.BDDTestFactory2&quot;/&gt;
     &lt;/classes&gt;
@@ -195,13 +251,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Validate One Way Booking')
-data.setCell(0, 2, 'com.qmetry.qaf.automation.step.client.Scenario')
-data.setCell(0, 3, 14421);
+data.setCell(0, 2, 'com.qmetry.qaf.automation.step.client.DataDrivenScenario')
+data.setCell(0, 3, 43647);
 window.suiteTableData['QAF_Demo']= { tableData: data, tableDiv: 'times-div-QAF_Demo'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 43 seconds</span>
               <div id="times-div-QAF_Demo">
               </div> <!-- times-div-QAF_Demo -->
             </div> <!-- times-div -->
@@ -216,9 +272,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-QAF_Demo" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qmetry.qaf.automation.step.client.DataDrivenScenario</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">Validate One Way Booking</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-QAF_Demo" class="panel">
@@ -227,38 +290,40 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.qmetry.qaf.automation.step.client.Scenario</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.qmetry.qaf.automation.step.client.DataDrivenScenario</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setupSuit(org.testng.TestRunner@dbd8e44)</span>
+                <span class="method-name">setupSuit(org.testng.TestRunner@6127a7e)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">setupTest(org.testng.TestRunner@dbd8e44)</span>
-                <span class="method-start">23 ms</span>
+                <span class="method-name">setupTest(org.testng.TestRunner@6127a7e)</span>
+                <span class="method-start">30 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-                <span class="method-name">setup(org.testng.TestRunner@dbd8e44)</span>
-                <span class="method-start">86 ms</span>
+                <span class="method-name">setup(org.testng.TestRunner@6127a7e)</span>
+                <span class="method-start">135 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">setupMethod(public void com.qmetry.qaf.automation.step.client.Scenario.scenario(), org.testng.TestRunner@dbd8e44)</span>
-                <span class="method-start">97 ms</span>
+                <span class="method-name">setupMethod(public void com.qmetry.qaf.automation.step.client.DataDrivenScenario.scenario(java.util.Map), org.te...)</span>
+                <span class="method-start">204 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">Validate One Way Booking</span>
-                <span class="method-start">98 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Validate One Way Booking({trip=One Way, __index=1})</span>
+                <span class="method-start">207 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod(org.testng.TestRunner@dbd8e44, [TestResult name=Validate One Way Booking status=SUCCESS method=scena...)</span>
-                <span class="method-start">14536 ms</span>
+                <span class="method-name">afterMethod(org.testng.TestRunner@6127a7e, [TestResult name=Validate One Way Booking status=FAILURE method=scena...)</span>
+                <span class="method-start">44453 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
-                <span class="method-name">afterClass(org.testng.TestRunner@dbd8e44)</span>
-                <span class="method-start">14537 ms</span>
+                <span class="method-name">afterClass(org.testng.TestRunner@6127a7e)</span>
+                <span class="method-start">44455 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
-                <span class="method-name">afterTest(org.testng.TestRunner@dbd8e44)</span>
-                <span class="method-start">14538 ms</span>
+                <span class="method-name">afterTest(org.testng.TestRunner@6127a7e)</span>
+                <span class="method-start">44463 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

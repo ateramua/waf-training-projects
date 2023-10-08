@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [QAF Test]" guice-stage="DEVELOPMENT" verbose="0">
+  <test parallel="methods" name="QAF-web-Firefox(failed)">
+    <parameter name="scenario.file.loc" value="scenarios/github"/>
+    <parameter name="env.resources" value="resources/application.properties;resources/uat/github"/>
+    <parameter name="step.provider.pkg" value="com.qmetry.qaf.github.steps"/>
+    <classes>
+      <class name="com.qmetry.qaf.automation.step.client.DataDrivenScenario">
+        <methods>
+          <include name="scenario" invocation-numbers="0"/>
+          <include name="setupTest"/>
+          <include name="setupSuit"/>
+          <include name="setup"/>
+          <include name="afterClass"/>
+          <include name="setupMethod"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.qmetry.qaf.automation.step.client.DataDrivenScenario -->
+    </classes>
+  </test> <!-- QAF-web-Firefox(failed) -->
+</suite> <!-- Failed suite [QAF Test] -->

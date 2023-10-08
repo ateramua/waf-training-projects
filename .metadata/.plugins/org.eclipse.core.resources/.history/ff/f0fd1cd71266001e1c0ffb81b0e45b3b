@@ -1,0 +1,23 @@
+package com.qmetry.qaf.Utility;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
+import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
+import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
+import com.qmetry.qaf.automation.util.Reporter;
+
+public class Utilities {
+	
+	/*
+	 * Method - Scroll to the Element and Click
+	 */
+	public static void scrollAndClick(QAFExtendedWebDriver driver, QAFWebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Reporter.log(element.isPresent()+ element.getText() +" is present");
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		js.executeScript("arguments[0].click();", element);
+		
+	}
+
+}

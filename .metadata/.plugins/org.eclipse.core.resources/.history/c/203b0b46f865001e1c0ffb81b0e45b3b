@@ -1,0 +1,4 @@
+test.prop = prop for uat
+
+env.baseurl=https://www.github.com/login
+#http://www.github.com/login

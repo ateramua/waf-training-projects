@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="QAF Demo" parallel="methods" verbose="0">
+<test name="QAF-BDD-Test-Mobile">
+   <parameter name="step.provider.pkg" value="com.qmetry.qaf.delta.steps" />
+   <parameter name="scenario.file.loc" value="scenarios/onewaybooking.feature" />
+   <parameter name="env.resources" value="resources/application.properties;resources/uat" />
+   <classes>
+      <class name="com.qmetry.qaf.automation.step.client.text.BDDTestFactory2" />
+   </classes>
+</test>
+
+</suite>

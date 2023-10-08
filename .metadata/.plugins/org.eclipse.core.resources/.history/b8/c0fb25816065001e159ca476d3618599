@@ -1,0 +1,7 @@
+Feature: Github Login
+
+Scenario Outline: Validate user can login with valid credential
+
+	Given user is on github login page
+	
+	Examples: {'groups':[login]}

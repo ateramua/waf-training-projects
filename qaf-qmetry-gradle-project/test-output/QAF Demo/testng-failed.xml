@@ -8,7 +8,7 @@
     <classes>
       <class name="com.qmetry.qaf.automation.step.client.DataDrivenScenario">
         <methods>
-          <include name="scenario" invocation-numbers="0"/>
+          <include name="scenario" invocation-numbers="0 1 2"/>
           <include name="setupTest"/>
           <include name="setupSuit"/>
           <include name="setup"/>

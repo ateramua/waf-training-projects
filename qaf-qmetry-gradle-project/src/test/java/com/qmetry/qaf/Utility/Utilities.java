@@ -36,12 +36,12 @@ public class Utilities {
 	/*
 	 * Method - select from dropdown
 	 */
-	public static void selectFromDropdown(QAFWebElement dropDown, String dropDownValue) {
-		List<WebElement> ddList = dropDown.findElements(By.xpath(dropDownValue));
+	public static void selectFromDropdown(QAFWebElement dropDown, String dropDownValue, String xpath) {
+		List<WebElement> ddList = dropDown.findElements(By.xpath(xpath));
 		for(WebElement ele:ddList) {
 			if(ele.getText().trim().equalsIgnoreCase(dropDownValue)) {
 				ele.click();
-				Validator.assertTrue(dropDown.getText().trim().equalsIgnoreCase(dropDownValue), "User failed to select " + dropDownValue, "Use successfully selected "+dropDownValue);
+				//Validator.assertTrue(dropDown.getText().trim().equalsIgnoreCase(dropDownValue), "User failed to select " + dropDownValue, "Use successfully selected "+dropDownValue);
 			}
 		}
 	}

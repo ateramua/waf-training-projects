@@ -145,21 +145,29 @@ public class OneWayBookingSteps {
 //		bookingpage.getTxtBoxTrip().waitForPresent(10000);
 //		Reporter.log(bookingpage.getTxtBoxTrip().isDisplayed() + " Is the txtbox trip present");
 		bookingpage.getTxtBoxTrip().click();
-		
-		List<WebElement> ddList = bookingpage.getDropDownTrip().findElements(By.xpath(trip));
-		Reporter.log(ddList.size() + " what is the size of the dropdown list *********");
-		for(WebElement ele:ddList) {
-			if(ele.getText().trim().equalsIgnoreCase(trip)) {
-				ele.click();
-				Reporter.log(trip + "Element selected is");
-				Validator.assertTrue(bookingpage.getDropDownTrip().getText().trim().equalsIgnoreCase(trip), "User failed to select " + trip, "User successfully selected "+ trip);
-			}
-		}
-		//Utilities.selectFromDropdown(bookingpage.getDropDownTrip(), trip);
-		Reporter.log(bookingpage.getDropDownTrip().getAttribute("value")+" Value selected for dropdown is '?'");
+//		
+//		List<WebElement> ddList = bookingpage.getDropDownTrip().findElements(By.xpath("//li[@role='option']"));
+//		for(WebElement e:ddList) {
+//			Reporter.log(e.getText().trim() + " dropdown list");
+//		}
+//		Reporter.log(bookingpage.getDropDownTrip().getText() + " what is the dropdown list Consists Of *********");
+//		Reporter.log(ddList.size() + " what is the size of the dropdown list *********");
+//		for(WebElement ele:ddList) {
+//			if(ele.getText().trim().equalsIgnoreCase(trip)) {
+//				ele.click();
+//				Reporter.log(bookingpage.getTxtBoxTrip().getAttribute("value") + " This is value of the textbox web element");
+//				Reporter.log(bookingpage.getTxtBoxTrip().getText() + " This is the value of the web element gettext return");
+//				bookingpage.getDropDownTrip().waitForEnabled(10000);
+//				Reporter.log(bookingpage.getTxtBoxTrip().getText().trim() + " Element selected is");
+//				Validator.assertTrue(bookingpage.getTxtBoxTrip().getText().trim().equalsIgnoreCase(trip), "User failed to select " + trip, "User successfully selected "+ trip);
+//			}
+//		}
+		String xpath="//li[@role='option']";
+		Utilities.selectFromDropdown(bookingpage.getDropDownTrip(),trip,xpath);
+		//Reporter.log(bookingpage.getTxtBoxTrip()+" Value selected for dropdown is '?'");
 		Thread.sleep(10000);
 //		bookingpage.getOneWay().click();
-//		Validator.assertTrue(bookingpage.getButtonTrip().getText().trim().equalsIgnoreCase(trip), "User failed to select " + trip, "User successfully selected "+trip);
+		Validator.assertTrue(bookingpage.getTxtBoxTrip().getText().trim().equalsIgnoreCase(trip), "User failed to select " + trip, "User successfully selected "+trip);
 		
 	}
 	
@@ -170,6 +178,10 @@ public class OneWayBookingSteps {
 		bookingpage.getTxtBoxTrip().click();
 	}
 	
+	@QAFTestStep(description = "User SELAM NEW")
+	public void selectLwbQ() {
+		Reporter.log("User SELAM NEW");
+	}
 
 	@QAFTestStep(description = "User selects departure date '02/05/2022'")
 	public void selectDepartureDate() {

@@ -51,23 +51,20 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	
 //	@PageIdentifier 		
-	@FindBy(locator = "{'locator':'xpath=//*[@aria-describedby='selectTripType-val']';'desc':'trip button'}")
+	@FindBy(locator = "{'locator':'css=#selectTripType-val';'desc':'trip button'}")
 	QAFWebElement getTextBoxTrip;
 	public QAFWebElement getTxtBoxTrip() {
 	 return getTextBoxTrip;
 	}
-	//*[@aria-describedby='selectTripType-val']
-	//(//*[@id='selectTripType-val'])[2]
 	
-	@FindBy(locator = "{'locator':'xpath=(//ul[@role='listbox'])[4]';'desc':'trip dropdown'}")
+
+	
+	@FindBy(locator = "{'locator':'css=#selectTripType-desc';'desc':'trip dropdown'}")
 	QAFWebElement dropDownTrip;
 	public QAFWebElement getDropDownTrip() {
 	 return dropDownTrip;
 	}
-	
-	//(//ul[@role='listbox'])[4]
-	
-			
+
 	@PageIdentifier 
 	@FindBy(locator = "{'locator':'xpath=//*[@id=\"booking\"]//span[1]/span[1])[1]';'desc':'Round'}")
 	QAFWebElement round;

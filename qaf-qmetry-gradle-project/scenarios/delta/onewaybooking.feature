@@ -4,7 +4,7 @@ Scenario Outline: Validate One Way Booking
 
 Given User is on Delta Booking Page 
 	When User clicks on Trip type dropdown
-#		And User selects trip type '<trip>'
+		And User selects trip type '<trip>'
 #	When User clicks on From Link
 #And User enters departure airport 'LAX'
 #And User selects departure airport from search results

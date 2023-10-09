@@ -1,12 +1,19 @@
 [ 
 
 	{ 
-	
-	
 		"trip":"One Way"
-		
-
+	},
+	
+	{ 
+		"trip":"Round Trip"
+	
+	},
+	
+	{ 
+	
+		"trip":"Multi-City"
 	
 	}
+
 
 ]

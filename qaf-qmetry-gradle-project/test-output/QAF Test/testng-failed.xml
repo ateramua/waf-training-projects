@@ -2,13 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="methods" name="Failed suite [QAF Test]" guice-stage="DEVELOPMENT" verbose="0">
   <test parallel="methods" name="QAF-web-Firefox(failed)">
-    <parameter name="scenario.file.loc" value="scenarios/github"/>
-    <parameter name="env.resources" value="resources/application.properties;resources/uat/github"/>
-    <parameter name="step.provider.pkg" value="com.qmetry.qaf.github.steps"/>
+    <parameter name="scenario.file.loc" value="scenarios/w3schools"/>
+    <parameter name="env.resources" value="resources/application.properties;resources/uat/w3school"/>
+    <parameter name="step.provider.pkg" value="com.qmetry.qaf.w3schools.steps"/>
+    <groups>
+      <run>
+        <include name="header"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.qmetry.qaf.automation.step.client.DataDrivenScenario">
+      <class name="com.qmetry.qaf.automation.step.client.Scenario">
         <methods>
-          <include name="scenario" invocation-numbers="0"/>
+          <include name="scenario"/>
           <include name="setupTest"/>
           <include name="setupSuit"/>
           <include name="setup"/>
@@ -17,7 +22,7 @@
           <include name="afterMethod"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- com.qmetry.qaf.automation.step.client.DataDrivenScenario -->
+      </class> <!-- com.qmetry.qaf.automation.step.client.Scenario -->
     </classes>
   </test> <!-- QAF-web-Firefox(failed) -->
 </suite> <!-- Failed suite [QAF Test] -->

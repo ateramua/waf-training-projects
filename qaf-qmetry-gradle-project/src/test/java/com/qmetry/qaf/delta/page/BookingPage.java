@@ -1,7 +1,10 @@
 package com.qmetry.qaf.delta.page;
 
+import java.util.List;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.qmetry.qaf.automation.ui.WebDriverBaseTestPage;
 import com.qmetry.qaf.automation.ui.annotations.FindBy;
@@ -12,6 +15,73 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 
 public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
+	
+	@PageIdentifier
+	@FindBy(locator = "{'locator':'xpath=(//*[@id=\"root\"]//header//span/button)[1]';'desc':'Top Sign In Button'}")
+	QAFWebElement btnSignInTop;
+	public QAFWebElement getTopSignInButton() {
+	return btnSignInTop;
+	}
+	
+	
+	
+	@FindBy(locator = "{'locator':'xpath=//*[text()='Continue with email']';'desc':'Continue with Email Button'}")
+	QAFWebElement btnContinuetWithEmail;
+	public QAFWebElement getSignIn() {
+	return btnContinuetWithEmail;
+	}
+	
+	
+	
+	@FindBy(locator = "{'locator':'xpath=//input[@type='email']';'desc':'Text Box Email Address'}")
+	QAFWebElement txtBoxEmail;
+	public QAFWebElement getTextBoxEmail() {
+	return txtBoxEmail;
+	}
+	
+	
+	
+	public void openPage(PageLocator locator, Object... args) {
+		driver.get("/");
+		clearBrowserCache(getDriver());
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+	}
+	
+	
+    public static void clearBrowserCache(WebDriver driver) {
+        if (driver instanceof JavascriptExecutor) {
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+            
+            // Execute JavaScript to clear the browser cache
+            jsExecutor.executeScript("window.location.reload(true);");
+        } else {
+            System.out.println("Warning: WebDriver does not support JavaScript execution.");
+        }
+    }
+	
+    
+    
+	public void invoke() {
+		launchPage(null);
+	}
+	
+	
+	
+	public QAFExtendedWebDriver getDriver() {
+		return ((QAFExtendedWebDriver) getTestBase().getDriver());
+	}
+	
+	
+	
+	public void waitForPageToLoad() {
+	    super.waitForPageToLoad();
+	}
+	
+
+	
+			
+//******************************************************************************************************************************************//
 	
 	@PageIdentifier 
 	@FindBy(locator = "{'locator':'link=BOOK';'desc':'Header of Page'}")
@@ -24,9 +94,9 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	//span[text()="Departure Airport or City"]
 	
 	@PageIdentifier 
-	@FindBy(locator = "{'locator':'xpath=//*[@id='fromAirportName']/span[3]';'desc':'From Link'}")
+	@FindBy(locator = "{'locator':'css=#bookFlightOriginInput';'desc':'From Link'}")
 	//*[@id='fromAirportName']/span[3]
-	//@FindBy(locator = "{'locator':['css=#fromAirportName';'id=fromAirportName';'xpath=.//a[@id=\'fromAirportName\']/span[1]'];'desc':'From Link'}")
+	//@FindBy(locator = "{'locator':['css=#fromAirportName';'id=fromAirportName';'locator=.//a[@id=\'fromAirportName\']/span[1]'];'desc':'From Link'}")
 	QAFWebElement from;
 	public QAFWebElement getFrom() {
 	 return from;
@@ -34,21 +104,31 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	@PageIdentifier 
 	//*[@id='search_input']
-	@FindBy(locator = "{'locator':'xpath=//*[@id='search_input']';'desc':'Airport Search TextBox'}")
+	@FindBy(locator = "{'locator':'css=#search_input';'desc':'Airport Search TextBox'}")
 	QAFWebElement airPortSearchTextBox;
 	public QAFWebElement getAirPortSearchTextBox() {
 	 return airPortSearchTextBox;
 	}
 	
+
 	
 	@PageIdentifier 
-	@FindBy(locator = "{'locator':'css=.header';'desc':'Header of Page'}")
+	@FindBy(locator = "{'locator':'css=#bookFlightDestinationInput'';'desc':'Header of Page'}")
 	QAFWebElement to;
 	public QAFWebElement getTo() {
 	 return to;
 	}
+	//*[@id=\"toAirportName\"]/span[3]
+	//*[contains(@class,'airport-city')]
 	
+	@FindBy(locator = "xpath=//li[contains(@class,'airport-list')]")
+	public List<WebElement> airportList;
 	
+	@FindBy(locator = "xpath=//*[@id='airport-serach-panel']//ul")
+	WebElement allAirports;
+	public WebElement getAllAirports() {
+	 return allAirports;
+	}
 	
 //	@PageIdentifier 		
 	@FindBy(locator = "{'locator':'css=#selectTripType-val';'desc':'trip button'}")
@@ -59,29 +139,44 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 
 	
+
+	
 	@FindBy(locator = "{'locator':'css=#selectTripType-desc';'desc':'trip dropdown'}")
 	QAFWebElement dropDownTrip;
-	public QAFWebElement getDropDownTrip() {
+	public WebElement getDropDownTrip() {
 	 return dropDownTrip;
 	}
+	
+	@FindBy(locator = "{'locator':'css=#booking';'desc':'header'}")
+	QAFWebElement headerBooking;
+	public WebElement getHeaderBooking() {
+	 return headerBooking;
+	}
 
+	
 	@PageIdentifier 
-	@FindBy(locator = "{'locator':'xpath=//*[@id=\"booking\"]//span[1]/span[1])[1]';'desc':'Round'}")
+	@FindBy(locator = "{'locator':'locator=//*[@id=\"booking\"]//span[1]/span[1])[1]';'desc':'Round'}")
 	QAFWebElement round;
 	public QAFWebElement getRound() {
 	 return round;
 	}
 	
+	@FindBy(locator ="xpath=//input[@id='oneway']")
+	QAFWebElement oneWaySelected;
+	public QAFWebElement getOneWaySelected() {
+	 return oneWaySelected;
+	}
+	
 	
 	@PageIdentifier 
-	@FindBy(locator = "{'locator':'xpath=//li[@id='ui-list-selectTripType1']';'desc':'One Way'}")
+	@FindBy(locator = "{'locator':'xpath=(//*[@class='app-components-BookFlightForm-bookFlightForm__checkmark--2DHJD'])[2]';'desc':'One Way'}")
 	QAFWebElement oneWay;
 	public QAFWebElement getOneWay() {
 	 return oneWay;
 	}
 	
 	@PageIdentifier 
-	@FindBy(locator = "{'locator':'xpath=//li[@id='ui-list-selectTripType1']';'desc':'Multi-City'}")
+	@FindBy(locator = "{'locator':'locator=//li[@id='ui-list-selectTripType1']';'desc':'Multi-City'}")
 	QAFWebElement multiCity;
 	public QAFWebElement getMultiCity() {
 	 return multiCity;
@@ -114,6 +209,12 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	QAFWebElement threePassengers;
 	public QAFWebElement selectThreePassengers() {
 	return threePassengers;
+	}
+	
+	@FindBy(locator = "xpath=//*[@id='fromAirportName']/span[1]")
+	QAFWebElement test;
+	public QAFWebElement getTest() {
+	return test;
 	}
 	
 	@PageIdentifier 
@@ -162,41 +263,13 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	
 	@PageIdentifier 
-	@FindBy(locator = "{'locator':'xpath=//*[text()='I UNDERSTAND']';'desc':'I Understand'}")
+	@FindBy(locator = "{'locator':'locator=//*[text()='I UNDERSTAND']';'desc':'I Understand'}")
 	QAFWebElement btnUnderstand;
 	public QAFWebElement getButtonUnderstand() {
 	return btnUnderstand;
 	}
 	
-	public void openPage(PageLocator locator, Object... args) {
-		driver.get("/");
-		clearBrowserCache(getDriver());
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-	}
-	
-	
-    public static void clearBrowserCache(WebDriver driver) {
-        if (driver instanceof JavascriptExecutor) {
-            JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-            
-            // Execute JavaScript to clear the browser cache
-            jsExecutor.executeScript("window.location.reload(true);");
-        } else {
-            System.out.println("Warning: WebDriver does not support JavaScript execution.");
-        }
-    }
-	
-	public void invoke() {
-		launchPage(null);
-	}
-	public QAFExtendedWebDriver getDriver() {
-		return ((QAFExtendedWebDriver) getTestBase().getDriver());
-	}
-	
-	public void waitForPageToLoad() {
-	    super.waitForPageToLoad();
-	}
+
 	
 	
 	//#ui-list-passengers1
@@ -219,43 +292,43 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	public void clickOnBook() {
 		
-		QAFWebElement Book = driver.findElement(By.xpath("//a[@id='headPrimary1']"));
+		QAFWebElement Book = driver.findElement(By.locator("//a[@id='headPrimary1']"));
 		Assert.assertTrue(Book.isDisplayed());
 		//test.log(Status.PASS, "WebElement 'Book' is Present");
 		Book.click();
-		QAFWebElement ToR = driver.findElement(By.xpath("//span[contains(text(), 'Your Destination')]"));
+		QAFWebElement ToR = driver.findElement(By.locator("//span[contains(text(), 'Your Destination')]"));
 		Assert.assertTrue(ToR.isDisplayed(), "Script failed to click on 'Book'");
 		//test.log(Status.PASS, "Script have successfully clicked on 'Book' Tab");
 	}
 	
 	public void clickonFromR() {
-		QAFWebElement FromR = driver.findElement(By.xpath("//*[@id='fromAirportName']/span[3]"));
+		QAFWebElement FromR = driver.findElement(By.locator("//*[@id='fromAirportName']/span[3]"));
 		Assert.assertTrue(FromR.isDisplayed());
 		//test.log(Status.PASS, "WebElement 'From' is Present");
 		FromR.click();
-		QAFWebElement OriginAirport = driver.findElement(By.xpath("//*[@id='search_input']"));
+		QAFWebElement OriginAirport = driver.findElement(By.locator("//*[@id='search_input']"));
 		Assert.assertTrue(OriginAirport.isDisplayed(), "Script failed to click on 'From' Link");
 		//test.log(Status.PASS, "Script have successfully clicked on 'From' Link");
 	}
 	
 	public void clickonToR() {
 		QAFWebDriverWait wait = new QAFWebDriverWait(driver , 20);
-		QAFWebElement ToR = driver.findElement(By.xpath("//*[@id=\"toAirportName\"]/span[3]"));
+		QAFWebElement ToR = driver.findElement(By.locator("//*[@id=\"toAirportName\"]/span[3]"));
 		
 	    // Wait for 'To' to be clickable
-		ToR = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='toAirportName']/span[3]")));
+		ToR = wait.until(ExpectedConditions.elementToBeClickable(By.locator("//*[@id='toAirportName']/span[3]")));
 		//span[contains(text(), 'Your Destination')]
 		//Assert.assertTrue(ToR.isDisplayed());
 		//test.log(Status.PASS, "WebElement 'To' is Present");
 		ToR.click();
-		QAFWebElement destAirport = driver.findElement(By.xpath("//*[@id='search_input']"));
+		QAFWebElement destAirport = driver.findElement(By.locator("//*[@id='search_input']"));
 		Assert.assertTrue(destAirport.isDisplayed(), "Script failed to click on 'To' Link");
 		//test.log(Status.PASS, "Script have successfully clicked on 'To' Link");
 	}
 	
 	
 	public void enterOriginAirport(String origin) {
-		QAFWebElement originAirport = driver.findElement(By.xpath("//*[@id='search_input']"));
+		QAFWebElement originAirport = driver.findElement(By.locator("//*[@id='search_input']"));
 		Assert.assertTrue(originAirport.isDisplayed());
 		//test.log(Status.PASS, "Origin Airport TextBox is Present");
 		originAirport.sendKeys(origin);
@@ -267,7 +340,7 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	public void enterdestAirport(String destination) {
 		
-		QAFWebElement destAirport = driver.findElement(By.xpath("//*[@id='search_input']"));
+		QAFWebElement destAirport = driver.findElement(By.locator("//*[@id='search_input']"));
 		Assert.assertTrue(destAirport.isDisplayed());
 		//test.log(Status.PASS, "Destination Airport TextBox is Present");
 		destAirport.sendKeys(destination);
@@ -280,7 +353,7 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	public void selectoriginAirportSearchResult() {
 		QAFWebElement originAirportSearchResult = driver.findElement(By.cssSelector("span.col-sm-2"));
-		QAFWebElement from = driver.findElement(By.xpath("//*[@id='fromAirportName']/span[1]"));
+		QAFWebElement from = driver.findElement(By.locator("//*[@id='fromAirportName']/span[1]"));
 		Assert.assertTrue(originAirportSearchResult.isDisplayed(), "No Search Result is present for Origin Airport");
 		//test.log(Status.PASS, "Origin Airport Search results is displayed");
 		originAirportSearchResult.click();
@@ -294,7 +367,7 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	}
 	public void selectDestAirportSearchResult() {
 		QAFWebElement destAirportSearchResult = driver.findElement(By.cssSelector("span.col-sm-2"));
-		QAFWebElement to = driver.findElement(By.xpath("//*[@id='toAirportName']/span[1]"));
+		QAFWebElement to = driver.findElement(By.locator("//*[@id='toAirportName']/span[1]"));
 		Assert.assertTrue(destAirportSearchResult.isDisplayed(), "No Search Result is present for Destination Airport");
 		//test.log(Status.PASS, "WebElement 'Done' is Present in the Calendar picker");
 		destAirportSearchResult.click();
@@ -303,7 +376,7 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	}
 	
 	public void clickOnTripType() {
-		QAFWebElement tripType = driver.findElement(By.xpath("//*[@id='selectTripType-val']"));
+		QAFWebElement tripType = driver.findElement(By.locator("//*[@id='selectTripType-val']"));
 		QAFWebElement RoundTrip = driver.findElement(By.cssSelector("li#ui-list-selectTripType0"));
 		Assert.assertTrue(tripType.isDisplayed(), "Done Button is not Present");
 		//test.log(Status.PASS, "WebElement 'tripType' is Present");
@@ -325,8 +398,8 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	public void selectDepartureDate() {
 		QAFWebElement CalDoneButton = driver.findElement(By.cssSelector("button.donebutton"));
-		QAFWebElement noDepDate = driver.findElement(By.xpath("//*[@id=\"calDepartLabelCont\"]//input[@value=\"\"]"));
-		QAFWebElement departDate = driver.findElement(By.xpath("//tbody[@class='dl-datepicker-tbody-1']//a[contains(text(), '6')]"));
+		QAFWebElement noDepDate = driver.findElement(By.locator("//*[@id=\"calDepartLabelCont\"]//input[@value=\"\"]"));
+		QAFWebElement departDate = driver.findElement(By.locator("//tbody[@class='dl-datepicker-tbody-1']//a[contains(text(), '6')]"));
 		Assert.assertTrue(departDate.isDisplayed(), "Departure Date selection is NOT Present");
 		//test.log(Status.PASS, "Departure Date selection is Present");
 		departDate.click();
@@ -338,8 +411,8 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	public void selectReturnDate() {
 		QAFWebElement CalDoneButton = driver.findElement(By.cssSelector("button.donebutton"));
-		QAFWebElement noReturnDate = driver.findElement(By.xpath("//*[@id='calReturnLabelCont']//input[@value='']"));
-		QAFWebElement returnDate = driver.findElement(By.xpath("//tbody[@class='dl-datepicker-tbody-1']//a[contains(text(), '13')]"));
+		QAFWebElement noReturnDate = driver.findElement(By.locator("//*[@id='calReturnLabelCont']//input[@value='']"));
+		QAFWebElement returnDate = driver.findElement(By.locator("//tbody[@class='dl-datepicker-tbody-1']//a[contains(text(), '13')]"));
 		Assert.assertTrue(returnDate.isDisplayed(), "Return Date selection is NOT Present");
 		//test.log(Status.PASS, "Return Date Selection is Present");
 		returnDate.click();
@@ -351,7 +424,7 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	
 	public void clickOnNumberOfPassengers() {
 		QAFWebElement passengerTwo = driver.findElement(By.cssSelector("li#ui-list-passengers1"));
-		QAFWebElement numberOfPassengers = driver.findElement(By.xpath("//*[@id='passengers-val']"));
+		QAFWebElement numberOfPassengers = driver.findElement(By.locator("//*[@id='passengers-val']"));
 		Assert.assertTrue(numberOfPassengers.isDisplayed(), "Passenger 1 is not Present");
 		//test.log(Status.PASS, "WebElement 'Passenger 1' is Present");
 		numberOfPassengers.click();
@@ -365,7 +438,7 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 		Assert.assertTrue(passengerTwo.isDisplayed(), "WebElement 'Passenger 2' is not Present");
 		//test.log(Status.PASS, "WebElement 'Passenger 2' is Present");
 		passengerTwo.click();
-		QAFWebElement numPassenger = driver.findElement(By.xpath("//*[@id='passengers-val']"));
+		QAFWebElement numPassenger = driver.findElement(By.locator("//*[@id='passengers-val']"));
 		String actual = numPassenger.getText();
 		String Expected = "1 Passenger";
 		Assert.assertNotSame(actual, Expected);
@@ -380,14 +453,14 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 		Assert.assertTrue(DepartR.isDisplayed(), "WebElement 'Depart' is not Present");
 		//test.log(Status.PASS, "WebElement 'Depart' is Present");
 		DepartR .click();
-		QAFWebElement departDate = driver.findElement(By.xpath("//tbody[@class='dl-datepicker-tbody-1']//a[contains(text(), '6')]"));
+		QAFWebElement departDate = driver.findElement(By.locator("//tbody[@class='dl-datepicker-tbody-1']//a[contains(text(), '6')]"));
 		Assert.assertTrue(departDate.isDisplayed(), "WebElement 'Depart' is NOT Present");
 		//test.log(Status.PASS, "Script clicked on WebElement 'Depart' Successfully");
 	}
 	
 	
 	public void clickOnReturnR() {
-		QAFWebElement ReturnR = driver.findElement(By.xpath("//*[@id='calReturnLabelCont']/span[2]"));
+		QAFWebElement ReturnR = driver.findElement(By.locator("//*[@id='calReturnLabelCont']/span[2]"));
 		Assert.assertTrue(ReturnR.isDisplayed(), "WebElement 'Return' is not Present");
 		//test.log(Status.PASS, "WebElement 'Return' is Present");
 		ReturnR.click();
@@ -397,7 +470,7 @@ public class BookingPage extends WebDriverBaseTestPage<WebDriverTestPage> {
 	}
 	
 	public void clickOnSearch() {
-		QAFWebElement Search = driver.findElement(By.xpath("//button[@id='btn-book-submit']"));
+		QAFWebElement Search = driver.findElement(By.locator("//button[@id='btn-book-submit']"));
 		Assert.assertTrue(Search.isEnabled(), "Search Button is not Present");
 		//test.log(Status.PASS, "WebElement 'Search' is Present");
 		JavascriptExecutor executor = (JavascriptExecutor)driver;

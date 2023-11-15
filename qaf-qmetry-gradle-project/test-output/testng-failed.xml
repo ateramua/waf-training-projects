@@ -2,13 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="methods" name="Failed suite [QAF Demo]" guice-stage="DEVELOPMENT" verbose="0">
   <test parallel="methods" name="QAF-BDD-Test-Mobile(failed)">
-    <parameter name="scenario.file.loc" value="scenarios/delta"/>
+    <parameter name="scenario.file.loc" value="scenarios"/>
     <parameter name="env.resources" value="resources/application.properties;resources/uat/delta"/>
     <parameter name="step.provider.pkg" value="com.qmetry.qaf.delta.steps"/>
+    <groups>
+      <run>
+        <include name="driver"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.qmetry.qaf.automation.step.client.DataDrivenScenario">
+      <class name="com.qmetry.qaf.automation.step.client.Scenario">
         <methods>
-          <include name="scenario" invocation-numbers="0 1 2"/>
+          <include name="scenario"/>
           <include name="setupTest"/>
           <include name="setupSuit"/>
           <include name="setup"/>
@@ -17,7 +22,7 @@
           <include name="afterMethod"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- com.qmetry.qaf.automation.step.client.DataDrivenScenario -->
+      </class> <!-- com.qmetry.qaf.automation.step.client.Scenario -->
     </classes>
   </test> <!-- QAF-BDD-Test-Mobile(failed) -->
 </suite> <!-- Failed suite [QAF Demo] -->

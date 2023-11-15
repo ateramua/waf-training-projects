@@ -1,19 +1,11 @@
 [ 
 
 	{ 
-		"trip":"One Way"
-	},
-	
-	{ 
-		"trip":"Round Trip"
-	
-	},
-	
-	{ 
-	
-		"trip":"Multi-City"
+		"trip":"One Way",
+		"dAirPort":"LAX"
 	
 	}
+	
 
 
 ]

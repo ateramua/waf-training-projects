@@ -6,9 +6,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeSuite;
 
@@ -22,6 +25,7 @@ import com.qmetry.qaf.automation.ui.AbstractTestBase;
 import com.qmetry.qaf.automation.ui.WebDriverBaseTestPage;
 import com.qmetry.qaf.automation.ui.api.PageLocator;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
+import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.util.Validator;
 import com.qmetry.qaf.delta.page.BookingPage;
@@ -32,6 +36,20 @@ import ch.qos.logback.classic.pattern.Util;
 public class OneWayBookingSteps {
 	BookingPage bookingpage = new BookingPage();
 	Utilities util = new Utilities();
+	
+	
+	@QAFTestStep(description = "User is on Kayak Booking Page")
+	public void navigateToKayakBookingPage() {
+		bookingpage.openPage(null, "");
+		bookingpage.waitForPageToLoad();
+		bookingpage.getTopSignInButton().waitForPresent(100000);
+		Validator.assertTrue(bookingpage.getTopSignInButton().isDisplayed(), "User failed to navigate to Kayak Booking page", "User successfully navigated to Kayak Booking Page");
+	}
+	
+	
+	
+	
+	
 	/*
 	public ExtentReports extent;
 	public ExtentSparkReporter spark;
@@ -62,30 +80,16 @@ public class OneWayBookingSteps {
 		BookingPage bookingpage = new BookingPage();
 		bookingpage.openPage(null, "");
 		Validator.assertTrue(bookingpage.getBook().isDisplayed(), "User failed to navigate to Booking Page", "User successfully navigated to booking page");
-		
+		Reporter.log(bookingpage.getBook().getText() + " This is what book web element reads");
+	}
+	
+	@QAFTestStep(description = "User is on United Booking Page") 
+	public  void userSelectsOneWayTrip() {
+		BookingPage bookingpage = new BookingPage();
+		bookingpage.getOneWay().click();
 	}
 
-//	@QAFTestStep(description = "User clicks on From Link")
-//	public void clickOnFromLink(){
-//		//test = extent.createTest("Verify From Link");
-//		BookingPage bookingpage = new BookingPage();
-//		Reporter.log(bookingpage.getFrom().isEnabled() + " is enabled ");
-//		Reporter.log(bookingpage.getFrom().isDisplayed()+ " is displayed");
-//		Reporter.log(bookingpage.getFrom().isPresent() + " is present");
-//		
-//		Validator.assertTrue(bookingpage.getAirPortSearchTextBox().isPresent(), "Script failed to click on From Link", "Script successfully clicked on From Link");
-		
-//		if(bookingpage.getAirPortSearchTextBox().isPresent()) {
-//			System.out.println("USER SUCCESSFULLY CLICK ON FROM LINK.I HOPE YOU CAN SEE THIS MESSAGE");
-//			//test.log(Status.PASS,"Script successfully clicked on From Link");
-//		} else {
-//			//test.log(Status.FAIL,"Script failed to click on From Link");
-//		}
-//		
-			
-		
-	
-//	}
+
 	@QAFTestStep(description = "User clicks on From Test")
 	public void clickTest(){
 		bookingpage.getFrom().waitForPresent(10000);
@@ -96,28 +100,93 @@ public class OneWayBookingSteps {
 	
 	@QAFTestStep(description = "User clicks on From Link")
 	public void userClickOnFromLink(){
-		util.scrollAndClick(bookingpage.getDriver(), bookingpage.getFrom());
-		bookingpage.getFrom().waitForPresent(10000);
+		//Utilities.scrollAndClick(bookingpage.getDriver(), bookingpage.getFrom());
+		Reporter.log(bookingpage.getTest().getText() + " web element reads");
 		bookingpage.getFrom().click();
 		bookingpage.getAirPortSearchTextBox().waitForPresent(10000);
 		Validator.assertTrue(bookingpage.getAirPortSearchTextBox().isPresent(), "Script failed to click on From Link", "Script successfully clicked on From Link");
 	}
 
 	@QAFTestStep(description = "User enters departure airport {dAirPort}")
-	public void clickOnFromLink(String dAirPort) {
+	public void clickOnFromLink(String dAirPort) throws InterruptedException {
 		//test = extent.createTest("Validate User can click on From Link");
-
+		bookingpage.getAirPortSearchTextBox().waitForEnabled(4000);
+		bookingpage.getAirPortSearchTextBox().clear();
+		bookingpage.getAirPortSearchTextBox().sendKeys(dAirPort);
+//		bookingpage.getAirPortSearchTextBox().sendKeys(Keys.ENTER);
+//		Reporter.log(bookingpage.getFrom().getText() + "***************************************");
+		Validator.assertTrue(bookingpage.getAirPortSearchTextBox().getAttribute("value").equalsIgnoreCase(dAirPort), "User failed to enter Origin Airport", "User successfully entered Origin Airport");
 	}
 
-	@QAFTestStep(description = "User selects departure airport from search results")
-	public void selectDepartureAirportFromList() {
+	@QAFTestStep(description = "User selects departure airport {dAirPort} from search results")
+	public void selectDepartureAirportFromList(String dAirPort) throws InterruptedException {
 		//test = extent.createTest("Validate user can select departure airport from the airport List");
 
+
+		String xpathh = "//li[contains(@class,'airport-list')]";
+		Reporter.log(bookingpage.getAllAirports().isDisplayed()+ " is it displayed");
+		Reporter.log(bookingpage.getAllAirports().isEnabled()+ " is it Enabled");
+		
+	//	Utilities.selectFromDropdown(bookingpage.getAllAirports(), dAirPort, xpathh);
+		
+
+		List<WebElement> ddList = bookingpage.getDriver().findElements(By.xpath(xpathh));
+//		Thread.sleep(6000);
+//		Reporter.log(ddList + "  departure airport list *************");
+//		Reporter.log(ddList.size() + "  departure airport list *************");
+		int y=0;
+		for(int i=0;i<ddList.size();i++) {
+			if(ddList.get(i).getText().trim().contains(dAirPort)) {
+			y=i;
+			}
+		}
+		Utilities.scrollAndClick(bookingpage.getDriver(), ddList.get(y));
+		//ddList.get(y).click();
+	
+
+//		for(WebElement ele:ddList) {
+//			//Reporter.log(ele.getText()+ "  All airport lists from the dropdown *************");
+//			
+//			if(ele.getText().trim().contains(dAirPort)) {
+				
+				
+//				Reporter.log(ddList + "  departure airport list *************");
+//				Reporter.log(ddList.size() + "  departure airport list *************");
+//				ele.sendKeys(Keys.RETURN);
+//				ele.click();
+//				Reporter.log(ele.isEnabled() + "  is the element present *************");
+//				ele.click();
+////				Utilities.doubleClickOnAnElement(ele,bookingpage.getDriver());
+//				Reporter.log(ele.getText()+" Selected from the dropdown");			
+//			} else {
+//				Reporter.log(" Airport could not be found ");
+//			}
+//		}
+//		bookingpage.getHeaderBooking().click();
+//		
+//		Utilities.scrollIntoView(bookingpage.getDriver(), bookingpage.getFrom());
+//		Thread.sleep(10000);
+//		
+//		
+//		
+//		
+//
+//		Thread.sleep(10000);
+	//	Reporter.log(bookingpage.getFrom().getText() + " is the Airport Selected");
+		Assert.assertTrue(bookingpage.getFrom().getText().contains(dAirPort));
+		//Validator.assertTrue(bookingpage.getFrom().getText().contains(dAirPort), "fail*********************", "pass************************");
+		   try {
+	            Thread.sleep(5000);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	            Reporter.log(e + " what is this error message saying ");
+	        }
 	}
 
 	@QAFTestStep(description = "User clicks on To link")
 	public void clickOnToLink() {
 		//test = extent.createTest("Validate user can click on 'To' link");
+		bookingpage.getTo().click();
 
 	}
 
@@ -133,49 +202,21 @@ public class OneWayBookingSteps {
 
 	}
 
-	@QAFTestStep(description = "User selects trip type {trip}")
-	public void selectOneWayTrip(String trip) throws InterruptedException {
-//		bookingpage.getButtonUnderstand().waitForPresent(10000);
-//		Reporter.log(bookingpage.getButtonUnderstand().isDisplayed()+" Is 'I understand' button is displayed");
-//		Utilities.switchToNewTab(bookingpage.getDriver());
-//		bookingpage.getButtonUnderstand().click();
-		
-		//bookingpage.getTrip().waitForPresent(10000);
-		//Utilities.scrollAndClick(bookingpage.getDriver(), bookingpage.getTrip());
-//		bookingpage.getTxtBoxTrip().waitForPresent(10000);
-//		Reporter.log(bookingpage.getTxtBoxTrip().isDisplayed() + " Is the txtbox trip present");
-		bookingpage.getTxtBoxTrip().click();
-//		
-//		List<WebElement> ddList = bookingpage.getDropDownTrip().findElements(By.xpath("//li[@role='option']"));
-//		for(WebElement e:ddList) {
-//			Reporter.log(e.getText().trim() + " dropdown list");
-//		}
-//		Reporter.log(bookingpage.getDropDownTrip().getText() + " what is the dropdown list Consists Of *********");
-//		Reporter.log(ddList.size() + " what is the size of the dropdown list *********");
-//		for(WebElement ele:ddList) {
-//			if(ele.getText().trim().equalsIgnoreCase(trip)) {
-//				ele.click();
-//				Reporter.log(bookingpage.getTxtBoxTrip().getAttribute("value") + " This is value of the textbox web element");
-//				Reporter.log(bookingpage.getTxtBoxTrip().getText() + " This is the value of the web element gettext return");
-//				bookingpage.getDropDownTrip().waitForEnabled(10000);
-//				Reporter.log(bookingpage.getTxtBoxTrip().getText().trim() + " Element selected is");
-//				Validator.assertTrue(bookingpage.getTxtBoxTrip().getText().trim().equalsIgnoreCase(trip), "User failed to select " + trip, "User successfully selected "+ trip);
-//			}
-//		}
-		String xpath="//li[@role='option']";
-		Utilities.selectFromDropdown(bookingpage.getDropDownTrip(),trip,xpath);
-		//Reporter.log(bookingpage.getTxtBoxTrip()+" Value selected for dropdown is '?'");
-		Thread.sleep(10000);
-//		bookingpage.getOneWay().click();
-		Validator.assertTrue(bookingpage.getTxtBoxTrip().getText().trim().equalsIgnoreCase(trip), "User failed to select " + trip, "User successfully selected "+trip);
-		
+	@QAFTestStep(description = "user selects one way trip")
+	public void selectOneWayTrip() throws InterruptedException {
+
+	//	bookingpage.getTxtBoxTrip().click();
+
+		bookingpage.getOneWay().click();
+		Validator.assertTrue(!bookingpage.getOneWaySelected().getAttribute("checked").isEmpty(), "User failed to select One Way Radio Button", "User successfully selected One Way Radio Button");
 	}
 	
 	@QAFTestStep(description = "User clicks on Trip type dropdown")
-	public void selectTripTypee() {
-//		Reporter.log(bookingpage.getButtonUnderstand().isDisplayed()+ " Button is displayed");
-//		bookingpage.getButtonUnderstand().click();
+	public void selectTripTypee() throws InterruptedException {
+
 		bookingpage.getTxtBoxTrip().click();
+
+		Validator.assertTrue(bookingpage.getDropDownTrip().isDisplayed(), "User failed to click on Trip down", "User successfully clicked on Trip Down");
 	}
 	
 	@QAFTestStep(description = "User SELAM NEW")

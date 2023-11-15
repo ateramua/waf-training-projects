@@ -4,6 +4,13 @@
    <parameter name="step.provider.pkg" value="com.qmetry.qaf.delta.steps" />
    <parameter name="scenario.file.loc" value="scenarios/delta" />
    <parameter name="env.resources" value="resources/application.properties;resources/uat/delta" />
+   <groups>
+	   
+	   <run>
+		   
+		   <include name="kayakLogin"></include>
+	   </run>
+   </groups>
    <classes>
       <class name="com.qmetry.qaf.automation.step.client.text.BDDTestFactory2" />
    </classes>

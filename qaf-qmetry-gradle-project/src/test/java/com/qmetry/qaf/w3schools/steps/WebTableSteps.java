@@ -24,7 +24,7 @@ import com.qmetry.qaf.w3schools.page.W3schoolWebTablePage;
 public class WebTableSteps extends WebDriverTestCase {
 	W3schoolWebTablePage w3 = new W3schoolWebTablePage();
 	Constants cons = new Constants();
-	//Test
+
 	
 	@QAFTestStep(description = "user is on w3school home page")
 	public void navToW3SchoolsHome() throws InterruptedException {
